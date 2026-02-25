@@ -1,14 +1,18 @@
 import TopNav from "@/components/layout/TopNav";
+import { AuthProvider } from "@/components/auth/AuthProvider";
+import { getServerMe } from "@/lib/auth/server-session";
 
-export default function ToolsLayout({
+export default async function ToolsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const me = await getServerMe();
+
   return (
-    <>
+    <AuthProvider initialMe={me}>
       <TopNav />
       {children}
-    </>
+    </AuthProvider>
   );
 }

@@ -1,5 +1,8 @@
+import RequirePerm from "@/components/auth/RequirePerm";
+
 export default function CodeEditorPage() {
   return (
+    <RequirePerm perm="editor.code.access">
     <main className="min-h-screen bg-zinc-950 text-zinc-100">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <h1 className="text-3xl font-semibold">Code Editor</h1>
@@ -18,5 +21,6 @@ export default function CodeEditorPage() {
         </a>
       </div>
     </main>
+    </RequirePerm>
   );
 }

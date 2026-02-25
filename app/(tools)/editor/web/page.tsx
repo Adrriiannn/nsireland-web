@@ -1,5 +1,8 @@
+import RequirePerm from "@/components/auth/RequirePerm";
+
 export default function WebEditorPage() {
   return (
+    <RequirePerm perm="editor.web.access">
     <main className="min-h-screen bg-zinc-950 text-zinc-100">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <h1 className="text-3xl font-semibold">Web Editor</h1>
@@ -19,5 +22,6 @@ export default function WebEditorPage() {
         </a>
       </div>
     </main>
+    </RequirePerm>
   );
 }

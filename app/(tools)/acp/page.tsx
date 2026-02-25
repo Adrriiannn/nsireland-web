@@ -1,5 +1,8 @@
+import RequirePerm from "@/components/auth/RequirePerm";
+
 export default function AcpPage() {
   return (
+    <RequirePerm perm="acp.access">
     <main className="min-h-screen bg-zinc-950 text-zinc-100">
       <div className="mx-auto max-w-5xl px-6 py-16">
         <h1 className="text-3xl font-semibold">ACP</h1>
@@ -21,5 +24,6 @@ export default function AcpPage() {
         </a>
       </div>
     </main>
+    </RequirePerm>
   );
 }
